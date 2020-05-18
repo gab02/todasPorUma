@@ -1,22 +1,118 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="content1" >
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>more</ion-title>
+  <ion-menu side="start" menuId="first" contentId="content1">
+    <ion-header >
+      <ion-toolbar >
+        <ion-title><p style="text-align: center;">Todas Por Uma</p></ion-title>
       </ion-toolbar>
     </ion-header>
-    
-    
+
     <ion-content>
-      <div style=" background-image: linear-gradient(to right, rgb(238, 172, 172), rgb(221, 157, 157));   height:100% ; font-family: 'Cabin', sans-serif;">
+      <div
+        style="
+          background-image: linear-gradient(
+            to right,
+            rgb(238, 172, 172),
+            rgb(221, 157, 157)
+          );
+          height: 100%;
+          font-family: 'Cabin', sans-serif;
+        "
+      >
         <ion-menu-toggle auto-hide="true">
+          <br />
+          <div class="container" style="padding: 3em;">
+            <div class="animate__animated animate__flipInX" style="animation-delay: 0.2s;">
+              <button
+                class="animate__animated animate__bounce"
+                type="button"
+                class="btn btn-danger btn-lg btn-block"
+                style="
+                  background-image: linear-gradient(
+                    to right,
+                    rgb(238, 172, 172),
+                    rgb(221, 157, 157)
+                  );
+                "
+             [routerLink]="'./home'"
+             >
+                Dashboard
+              </button>
 
-          
-          <br><br>
-<div class="container" style="padding: 3em;">
-</div>  
+            </div>
+<br>
+            <div class="animate__animated animate__flipInX"  style="animation-delay: 0.4s;">
+              <button
+                type="button"
+                class="btn btn-danger btn-lg btn-block"
+                style="
+                  background-image: linear-gradient(
+                    to right,
+                    rgb(238, 172, 172),
+                    rgb(221, 157, 157)
+                  );
+                "
+                 [routerLink]="'./angel'"
+              >
+                Adicionar Anjo
+              </button>
+            </div>
+<br>
+            <div class="animate__animated animate__flipInX" style="animation-delay: 0.6s;">
+              <button
+                type="button"
+                class="btn btn-danger btn-lg btn-block"
+                style="
+                  background-image: linear-gradient(
+                    to right,
+                    rgb(238, 172, 172),
+                    rgb(221, 157, 157)
+                  );
+              
+            "
+                           [routerLink]="'./more'"
+
+            >
+
+                Sobre nós
+              </button>
+            </div>
+            <br>
+            <div class="animate__animated animate__flipInX" style="animation-delay: 0.8s;">
+              <button
+                type="button"
+                class="btn btn-danger btn-lg btn-block"
+                style="
+                  background-image: linear-gradient(
+                    to right,
+                    rgb(238, 172, 172),
+                    rgb(221, 157, 157)
+                  );
+                "
+              >
+                Configurações
+              </button>
+            </div>
+            <br>
+            <br /><br />
+            <div class="animate__animated animate__flipInX" style="animation-delay: 1s;">
+              <button
+                type="button"
+                class="btn btn-danger btn-lg btn-block"
+                style="
+                  background-image: linear-gradient(
+                    to right,
+                    rgb(238, 172, 172),
+                    rgb(221, 157, 157)
+                  );
+                "
+                               [routerLink]="'./login'"
+
+              >
+                Sair
+              </button>
+            </div>
+          </div>
         </ion-menu-toggle>
-
       </div>
     </ion-content>
   </ion-menu>
