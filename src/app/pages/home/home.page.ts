@@ -11,20 +11,35 @@ declare var google;
   styleUrls: ['home.page.scss'],
 })
 
-export class HomePage implements OnInit, AfterViewInit  {
-    @ViewChild('mapElement') mapNativeElement: ElementRef;
+export class HomePage implements OnInit {
+  map: any;
+
     constructor() { }
   
     ngOnInit() {
+      const position = new google.maps.LatLng(-21.763409, -43.349034);
+
+      const mapOptions = {
+        zoom: 18,
+        center: position,
+        //disableDefaultUI: true
+
     }
-  
-    ngAfterViewInit(): void {
-      const map = new google.maps.Map(this.mapNativeElement.nativeElement, {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-      });
-    }
-  
+    this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    const marker = new google.maps.Marker({
+      position: position,
+      map: this.map,
+
+      //Titulo
+      //title: 'Minha posição',
+
+      //Animção
+      //animation: google.maps.Animation.DROP, // BOUNCE
+
+      //Icone
+      //icon: 'assets/imgs/pessoa.png'
+    });
   }
-  
-  
+
+}
