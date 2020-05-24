@@ -1,0 +1,182 @@
+<ion-content>
+  <div
+    style="
+      background-image: linear-gradient(
+        to bottom,
+        #db8f8faf,
+        rgba(160, 101, 128, 0.686)
+      );
+      width: 100%;
+      height: 200%;
+    "
+  >
+    <ion-header class="fixed-top">
+      <ion-menu-button style="width: 50px; height: 50px;">
+        <ion-fab-button style="padding: 1em; margin-left: -80%;" color="danger">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-fab-button>
+      </ion-menu-button> </ion-header
+    ><br /><br /><br />
+    <div class="container" style="padding: 1em;">
+      <h2 style="color: white; text-align: center;">Ocorrências</h2>
+      <hr style="background-color: thistle; width: 100%;" />
+      <ion-card
+        style="
+          height: 100%;
+          width: 100%;
+          margin-left: -0.4%;
+          background-image: linear-gradient(
+            to bottom,
+            #db8f8faf,
+            rgba(160, 101, 128, 0.686)
+          );
+        "
+      >
+        <ion-card-content>
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="formGroupExampleInput"
+                placeholder="Digite seu nome"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="date"
+                class="form-control"
+                id="formGroupExampleInput2"
+                placeholder="Data da Ocorrência"
+              />
+            </div>
+
+            <ion-row>
+              <ion-col size="6">
+                <div class="form-group">
+                  <ion-item style="border-radius: 2px;">
+                    <ion-label>Estado</ion-label>
+
+                    <ion-select placeholder="Estado">
+                      <ion-select-option value="f">Estado 1</ion-select-option>
+                      <ion-select-option value="m">Estado 2</ion-select-option>
+                      <ion-select-option value="f">Estado 3</ion-select-option>
+                      <ion-select-option value="m">Estado 4</ion-select-option>
+                      <ion-select-option value="f">Estado 5</ion-select-option>
+                      <ion-select-option value="m">Estado 6</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+              </ion-col>
+
+              <ion-col size="6">
+                <div class="form-group">
+                  <ion-item style="border-radius: 2px;">
+                    <ion-label>Cidade</ion-label>
+
+                    <ion-select placeholder="Cidade">
+                      <ion-select-option value="f">Cidade 1</ion-select-option>
+                      <ion-select-option value="m">Cidade 2</ion-select-option>
+                      <ion-select-option value="f">Cidade 3</ion-select-option>
+                      <ion-select-option value="m">Cidade 4</ion-select-option>
+                      <ion-select-option value="f">Cidade 5</ion-select-option>
+                      <ion-select-option value="m">Cidade 6</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+              </ion-col>
+            </ion-row>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="formGroupExampleInput2"
+                placeholder="Bairro"
+              />
+            </div>
+            <div class="form-group">
+              <ion-item style="border-radius: 2px;">
+                <ion-label>Tipo da ocorrência</ion-label>
+
+                <ion-select placeholder="Cidade">
+                  <ion-select-option value="f">Cidade 1</ion-select-option>
+                  <ion-select-option value="m">Cidade 2</ion-select-option>
+                  <ion-select-option value="f">Cidade 3</ion-select-option>
+                  <ion-select-option value="m">Cidade 4</ion-select-option>
+                  <ion-select-option value="f">Cidade 5</ion-select-option>
+                  <ion-select-option value="m">Cidade 6</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <ion-item>
+              <ion-label
+                position="floating"
+                maxlength="1000"
+                style="height: 100%;"
+                >Descrição</ion-label
+              >
+              <ion-textarea></ion-textarea>
+            </ion-item>
+            <br />
+            <ion-button color="success" expand="block">
+              Salvar occorência</ion-button
+            >
+          </form>
+        </ion-card-content></ion-card
+      >
+      <hr style="background-color: thistle; width: 100%;" />
+
+      <ion-card> </ion-card>
+
+      <ion-item-sliding>
+        <ion-card>
+          <ion-item>
+            <ion-card-header
+              >Tipo da Ocorrência
+              <ion-card-content>
+                Informações da ocorrencia<br />Informações da ocorrencia
+              </ion-card-content>
+            </ion-card-header>
+          </ion-item>
+          <ion-item-options>
+            <ion-button color="danger" style="height: 100%; margin-top: -1px;">
+              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
+            >
+          </ion-item-options>
+        </ion-card> </ion-item-sliding
+      ><ion-item-sliding>
+        <ion-card>
+          <ion-item>
+            <ion-card-header
+              >Tipo da Ocorrência
+              <ion-card-content>
+                Informações da ocorrencia<br />Informações da ocorrencia
+              </ion-card-content>
+            </ion-card-header>
+          </ion-item>
+          <ion-item-options>
+            <ion-button color="danger" style="height: 100%;  margin-top: -1px;">
+              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
+            >
+          </ion-item-options>
+        </ion-card> </ion-item-sliding
+      ><ion-item-sliding>
+        <ion-card>
+          <ion-item>
+            <ion-card-header
+              >Tipo da Ocorrência
+              <ion-card-content>
+                Informações da ocorrencia<br />Informações da ocorrencia
+              </ion-card-content>
+            </ion-card-header>
+          </ion-item>
+          <ion-item-options>
+            <ion-button color="danger" style="height: 100%;  margin-top: -1px;">
+              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
+            >
+          </ion-item-options>
+        </ion-card>
+      </ion-item-sliding>
+    </div>
+  </div>
+</ion-content>
