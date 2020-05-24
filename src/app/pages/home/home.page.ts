@@ -2,7 +2,7 @@ import { Platform, LoadingController } from '@ionic/angular';
 
 
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {GoogleMaps, GoogleMapOptions, Marker, GoogleMapsEvent, GoogleMap, Environment, MyLocation } from '@ionic-native/google-maps';
+import {GoogleMaps, GoogleMapOptions, Marker, GoogleMapsEvent, GoogleMap, Environment, MyLocation, GoogleMapsAnimation } from '@ionic-native/google-maps';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +30,11 @@ export class HomePage implements OnInit {
 
   async loadMap(){
 
-    this.loading = await this.loadingCtrl.create({message:'please, in loading...'});
+    this.loading = await this.loadingCtrl.create({
+      message:'please, in loading...',
+      duration: 2000
+    
+    });
     await this.loading.present();
 
     Environment.setEnv({
@@ -46,7 +50,8 @@ zoom: false
     this.map = GoogleMaps.create(this.mapElement, mapOption);
     try{ 
       await this.map.one(GoogleMapsEvent.MAP_READY);
-      this.addOriginMarker();
+      this.addOriginMarker(); 
+      
 
     } catch(error){
       console.error(error);
@@ -56,12 +61,22 @@ zoom: false
      }
 
      async addOriginMarker(){
-       try{const myLocation: MyLocation = await this.map.getMyLocation(); }
+       try{const myLocation: MyLocation = await this.map.getMyLocation();
+        await this.map.moveCamera({
+          target: myLocation.latLng,
+          zoom:18
+            });
+         await this.map.addMarkerSync({
+title:'Origem',
+icon: '#000',
+animation: GoogleMapsAnimation.BOUNCE,
+position:myLocation.latLng
+
+         })
+
+      }
        catch(error){
         console.error(error);
-      }finally{
-
-        this.loading.dimiss();
       }
     }
 }
