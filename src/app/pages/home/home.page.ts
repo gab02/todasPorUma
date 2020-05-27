@@ -1,4 +1,5 @@
-import { Platform, LoadingController } from '@ionic/angular';
+import { Platform, LoadingController, PopoverController, AlertController } from '@ionic/angular';
+import { SMS } from '@ionic-native/sms/ngx';
 
 
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
@@ -17,7 +18,10 @@ export class HomePage implements OnInit {
   map: GoogleMap;
   private loading: any;
   constructor(private plataform: Platform,
-              private loadingCtrl: LoadingController
+              private loadingCtrl: LoadingController,
+              public popoverController: PopoverController,
+              public alertController: AlertController,
+              private sms: SMS
       ) { }
 
   ngOnInit(){
@@ -28,6 +32,45 @@ export class HomePage implements OnInit {
     this.addOriginMarker();
   }
 
+center(){
+this.map.moveCameraZoomIn();
+
+}
+
+ SMS(){
+
+
+}
+async presentPopover(ev: any) {
+  const popover = await this.popoverController.create({
+    component: HomePage,
+    cssClass: 'my-custom-class',
+    event: ev,
+    translucent: true
+  });
+  return await popover.present();
+}
+async presentAlert() {
+  const alert = await this.alertController.create({
+    cssClass: 'my-custom-class',
+    header: 'SMS' ,
+    message: 'Quando clicar nesse botão nós iremos pedir ajuda para os seus anjos via SMS',
+    buttons: ['OK']
+  });
+  this.sms.send('+55 11 96722-4507', 'fala seu puto');
+
+  await alert.present();
+}
+async presentAlert1() {
+  const alert = await this.alertController.create({
+    cssClass: 'my-custom-class',
+    header: 'Whatsapp',
+    message: 'Quando clicar nesse botão nós iremos pedir ajuda para os seus anjos via Whatsapp',
+    buttons: ['OK']
+  });
+
+  await alert.present();
+}
   async loadMap(){
 
     this.loading = await this.loadingCtrl.create({
