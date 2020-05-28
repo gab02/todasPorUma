@@ -12,7 +12,7 @@ import {GoogleMaps, GoogleMapOptions, Marker, GoogleMapsEvent, GoogleMap, Enviro
 })
 
 export class HomePage implements OnInit {
-  
+   
   @ViewChild('map', {static:true}) mapElement: any;
 
   map: GoogleMap;
@@ -21,8 +21,7 @@ export class HomePage implements OnInit {
               private loadingCtrl: LoadingController,
               public popoverController: PopoverController,
               public alertController: AlertController,
-              private sms: SMS
-      ) { }
+              private sms: SMS    ) { }
 
   ngOnInit(){
     this.mapElement = this.mapElement.nativeElement;
@@ -37,9 +36,11 @@ this.map.moveCameraZoomIn();
 
 }
 
- SMS(){
-
-
+sendTxt() {
+  this.sms.send(
+  '+5511981464438', 
+  'Hello world!'
+    );
 }
 async presentPopover(ev: any) {
   const popover = await this.popoverController.create({

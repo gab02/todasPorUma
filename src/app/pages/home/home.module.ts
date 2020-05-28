@@ -1,3 +1,4 @@
+import { SMS } from '@ionic-native/sms/ngx';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,11 +21,11 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
 
   ],
   declarations: [HomePage],
-  providers: [Geolocation]
+  providers: [Geolocation, SMS]
   
 
 })

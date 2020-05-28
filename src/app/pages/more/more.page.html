@@ -1,7 +1,7 @@
 
 <ion-content>
 
-  <div style="background-image:linear-gradient(to bottom, #db8f8faf, rgba(160, 101, 128, 0.686)); width: 100%; height: 100%;">
+  <div style="background-image:linear-gradient(to bottom, #db8f8faf, rgba(160, 101, 128, 0.686)); width: 100%; height: 400%;">
     <ion-header class="fixed-top">
       <ion-menu-button style="width: 50px; height: 50px; ">
         <ion-fab-button  style="padding: 1em; margin-left: -80%;" color="danger">   <ion-icon name="arrow-back"></ion-icon>
@@ -23,16 +23,71 @@
 
   </ion-row>
 <br> <br> <br>
-  <ion-button expand="block">
-   Qual a Problemática presente ?  <ion-icon name="arrow-up">
+<div *ngFor="let item of items;let index = index" class="header" (click)="showSubItem(index)">
+  
+<ion-button expand="block">
+    
+  <p>{{item.name}}</p> 
+    
+    <ion-icon name="share-alt">
 
     </ion-icon>
   </ion-button>
+    
+    <div *ngIf="visibleIndex === index" class="subheader">
+      <span *ngFor="let subItem of item.items">
+     <ion-card style="width: 100%; margin-left: 0%;" class="animate__animated animate__lightSpeedInLeft"><ion-card-content> {{subItem}}</ion-card-content> </ion-card>
+     
+      </span>
+    </div>
+  
+  
+  </div>
+ 
 <br>
-  <ion-button expand="block">  Desigualdade de gênero existe?  <ion-icon name="arrow-up">
+    <div *ngFor="let item of items;let index = index" class="header" (click)="showSubItem1(index)">
+  
+      <ion-button expand="block">
+          <p>{{item.name}}</p> <ion-icon name="arrow-up">
+      
+          </ion-icon>
+        </ion-button>
+          
+          <div *ngIf="visibleIndex1 === index" class="subheader">
+            <span *ngFor="let subItem of item of items1">
 
-  </ion-icon>
-</ion-button>
+           <ion-card style="width: 100%; margin-left: 0%;" class="animate__animated animate__lightSpeedInLeft">
+            <ion-card-content> Existem diferenças entre o corpo do homem e o corpo da mulher. Estas diferenças são biológicas e estão relacionadas aos sexos masculinos e feminino. Contudo, as diferenças entre os sexos não explicam as desigualdades de poder, prestígio e liberdade entre homens e mulheres, como nos exemplos:<br>
+
+
+              Educação e Renda
+              <br>
+              Uma mulher com 12 anos se estudo recebe, em média, 65%do salário de um homem com a mesma escolaridade
+              <br>
+              
+              Trabalho Doméstico
+              <br>
+              82% das mulheres jovens realizam tarefas domésticas.
+              40% dos homens jovens cumprem tais atividades.
+              <br>
+              
+              Violência Sexual
+              <br>
+              88,5% das vítimas de estrupo no Brasil são mulheres. Os homens representam 11,5% das vítimas.
+              <br>
+              
+              Uma das consequências mais graves da desigualdade de gênero é a persistência da ideia de que homens possam ofender, humilhar e agredir as mulheres porque "podem"," têm direito" ou "necessidade sexuais"
+              <br>
+              HOMENS E MULHERES PODEM SER DIFERENTES, MAS OS DIREITOS DEVEM SER IGUAIS!
+              </ion-card-content> 
+          </ion-card>
+           
+            </span>
+          </div>
+        
+        
+        </div>
+  
   <br>
   <ion-button expand="block"> Quais são os tipos de violência?   <ion-icon name="arrow-up">
 
@@ -44,3 +99,4 @@
   </div>
 </div>
 </ion-content>
+ 
