@@ -1,8 +1,4 @@
-   
-     
-     
           
-           
 
 <ion-content>
 
@@ -25,7 +21,9 @@
 </ion-menu-button>
  </ion-header><br><br><br>
   <div class="container" style="padding: 1em;">
-      <ion-row>
+    <form [formGroup]="formGroup">
+  
+    <ion-row>
         <ion-col size="6">
           <img
             src="../../assets/angel.png"
@@ -41,90 +39,55 @@
         </ion-col>
       </ion-row>
       <hr style="background-color: white; width: 100%;" />
-
-      <form>
-        <input type="text" class="form-control" placeholder="Nome do Anjo" />
+<div class="form-group">
+        <ion-input type="text" formControlName="nome" required id="nome"class="form-control" placeholder="Nome do Anjo" > 
+        </ion-input>
+</div>
         <br />
-        <input type="text" class="form-control" placeholder="Celular" />
-      </form>
-      <br>
+        <div class="form-group">
+      
+        <ion-input  formControlName="numero" type="number" required id="numero" class="form-control" placeholder="Celular" > </ion-input>
+ </div>
+        <br>
       <ion-row>
         <ion-col>
           <ion-button expand="block">Contatos</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button color=success expand="block">Salvar</ion-button>
+          <ion-button type="submit" (click)="addItem1()"  color=success expand="block">Salvar</ion-button>
         </ion-col>
       </ion-row>
       <br >
 
-      <ion-item-sliding>
-        <ion-card>
-          <ion-item>
-            <ion-card-header
-              >1° Anjo
-              <ion-card-content>
-                <p>Nome do anjo:</p>
-                <p>Celular: </p>              </ion-card-content>
-            </ion-card-header>
-          </ion-item>
-          <ion-item-options>
-            <ion-button color="danger" style="height: 100%; margin-top: -1px;">
-              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
-            >
-          </ion-item-options>
-        </ion-card> </ion-item-sliding
-      >
 
-      <ion-item-sliding>
+
+
+      <ion-list *ngFor="let itam of itens; let i = index" 
+      class=" animate__animated animate__flipInY" style=" width: auto; animation-duration: 1s; border-radius: 2px;  
+      background-image: linear-gradient(to right, rgb(238, 215, 215), rgb(255, 255, 255));">
+       
+       <ion-item-sliding style="width: auto;  background-image: linear-gradient(to right, rgb(238, 215, 215), rgb(255, 255, 255));"  >
         <ion-card>
           <ion-item>
             <ion-card-header
-              >1° Anjo
-              <ion-card-content>
-                <p>Nome do anjo:</p>
-                <p>Celular: </p>              </ion-card-content>
-            </ion-card-header>
+              ><p><b>Nomo do Anjo:</b> {{itam.nome}}</p> 
+              <p> <b> Número: </b> {{itam.numero}} </p>         
+
+             </ion-card-header>       
+                   <ion-card-content>
+                
+                   </ion-card-content>
+           
           </ion-item>
           <ion-item-options>
-            <ion-button color="danger" style="height: 100%; margin-top: -1px;">
-              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
-            >
+            <ion-button (click)="removeItem(i)" color=danger style="height: 100%; margin-top: -1px;">
+              <ion-icon name="close-circle"></ion-icon> Delete</ion-button  >
           </ion-item-options>
-        </ion-card> </ion-item-sliding
-      >  <ion-item-sliding>
-        <ion-card>
-          <ion-item>
-            <ion-card-header
-              >1° Anjo
-              <ion-card-content>
-                <p>Nome do anjo:</p>
-                <p>Celular: </p>              </ion-card-content>
-            </ion-card-header>
-          </ion-item>
-          <ion-item-options>
-            <ion-button color="danger" style="height: 100%; margin-top: -1px;">
-              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
-            >
-          </ion-item-options>
-        </ion-card> </ion-item-sliding
-      >  <ion-item-sliding>
-        <ion-card>
-          <ion-item>
-            <ion-card-header
-              >1° Anjo
-              <ion-card-content>
-                <p>Nome do anjo:</p>
-                <p>Celular: </p>              </ion-card-content>
-            </ion-card-header>
-          </ion-item>
-          <ion-item-options>
-            <ion-button color="danger" style="height: 100%; margin-top: -1px;">
-              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
-            >
-          </ion-item-options>
-        </ion-card> </ion-item-sliding
-      >
+        </ion-card> 
+      </ion-item-sliding>
+  </ion-list> <br>
+ </form>
+
     </div>
   </div>
 </ion-content>

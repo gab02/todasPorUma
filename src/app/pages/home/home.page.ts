@@ -32,7 +32,7 @@ export class HomePage implements OnInit {
   }
 
 center(){
-this.map.moveCameraZoomIn();
+this.map.moveCameraZoomOut();
 
 }
 

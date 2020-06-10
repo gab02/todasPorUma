@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +13,10 @@ import { AngelPage } from './angel.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AngelPageRoutingModule
+    AngelPageRoutingModule,
+    ReactiveFormsModule
   ],
+
   declarations: [AngelPage]
 })
 export class AngelPageModule {}

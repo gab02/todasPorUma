@@ -8,11 +8,8 @@ export const routes: Routes = [
   { 
     path: 'pages', 
     loadChildren: './pages/pages-routing.module#PagesRoutingModule'
-  },
+  }
   
- 
-
-
 
 ];
 
