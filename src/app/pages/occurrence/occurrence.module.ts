@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LongPressModule } from 'ionic-long-press';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +14,10 @@ import { OccurrencePage } from './occurrence.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    OccurrencePageRoutingModule
+    OccurrencePageRoutingModule,
+    ReactiveFormsModule,
+    LongPressModule
+
   ],
   declarations: [OccurrencePage]
 })

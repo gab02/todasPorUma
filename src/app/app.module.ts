@@ -3,7 +3,8 @@ import { SMS } from '@ionic-native/sms/ngx';
 import {  Geolocation } from '@ionic-native/geolocation/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { IonicGestureConfig } from '../app/pages/occurrence/IonicGestureConfig'
 
 
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -22,7 +23,8 @@ import { Contacts } from '@ionic-native/contacts';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    IonicGestureConfig,
+    { provide: HAMMER_GESTURE_CONFIG , useClass: IonicGestureConfig },
     Geolocation, 
     GoogleMaps, 
     Contacts, 

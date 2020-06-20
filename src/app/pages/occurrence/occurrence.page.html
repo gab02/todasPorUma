@@ -17,6 +17,8 @@
         </ion-fab-button>
       </ion-menu-button> </ion-header
     ><br /><br /><br />
+    <button ion-button ion-long-press [interval]="400" (pressed)="pressed()" (longPressed)="active()" (pressEnded)="released()"></button>
+
     <div class="container" style="padding: 1em;">
       <h2 style="color: white; text-align: center;">Ocorrências</h2>
       <hr style="background-color: thistle; width: 100%;" />
@@ -33,9 +35,11 @@
         "
       >
         <ion-card-content>
-          <form>
+          <form [formGroup]="formGroup">
             <div class="form-group">
               <input
+              formControlName="nome"
+              id="nome"
                 type="text"
                 class="form-control"
                 id="formGroupExampleInput"
@@ -88,6 +92,8 @@
             </ion-row>
             <div class="form-group">
               <input
+               formControlName="bairro"
+                id="bairro"
                 type="text"
                 class="form-control"
                 id="formGroupExampleInput2"
@@ -110,73 +116,51 @@
             </div>
             <ion-item>
               <ion-label
-                position="floating"
-                maxlength="1000"
-                style="height: 100%;"
-                >Descrição</ion-label
-              >
-              <ion-textarea></ion-textarea>
+              position="floating"
+              maxlength="1000"
+              style="height: 100%;"
+              >Descrição</ion-label
+            >
+              <ion-textarea formControlName="descricao"
+              id="descricao">
+          
+             </ion-textarea>
             </ion-item>
             <br />
-            <ion-button color="success" expand="block">
+            <ion-button (click)="addItem1()" color="success" expand="block">
               Salvar occorência</ion-button
             >
           </form>
         </ion-card-content></ion-card
       >
       <hr style="background-color: thistle; width: 100%;" />
-
-      <ion-card> </ion-card>
-
+<ion-list *ngFor="let itam of itens; let i = index" 
+class=" animate__animated animate__tada">
       <ion-item-sliding>
         <ion-card>
           <ion-item>
             <ion-card-header
-              >Tipo da Ocorrência
+              >
+              
+              <p>{{itam.nome}}</p>
               <ion-card-content>
-                Informações da ocorrencia<br />Informações da ocorrencia
+                <p>{{itam.bairro}}</p>
+                
+                
+                <br />
+                
+                
               </ion-card-content>
             </ion-card-header>
           </ion-item>
           <ion-item-options>
-            <ion-button color="danger" style="height: 100%; margin-top: -1px;">
-              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
-            >
-          </ion-item-options>
-        </ion-card> </ion-item-sliding
-      ><ion-item-sliding>
-        <ion-card>
-          <ion-item>
-            <ion-card-header
-              >Tipo da Ocorrência
-              <ion-card-content>
-                Informações da ocorrencia<br />Informações da ocorrencia
-              </ion-card-content>
-            </ion-card-header>
-          </ion-item>
-          <ion-item-options>
-            <ion-button color="danger" style="height: 100%;  margin-top: -1px;">
-              <ion-icon name="close-circle"></ion-icon> Delete</ion-button
-            >
-          </ion-item-options>
-        </ion-card> </ion-item-sliding
-      ><ion-item-sliding>
-        <ion-card>
-          <ion-item>
-            <ion-card-header
-              >Tipo da Ocorrência
-              <ion-card-content>
-                Informações da ocorrencia<br />Informações da ocorrencia
-              </ion-card-content>
-            </ion-card-header>
-          </ion-item>
-          <ion-item-options>
-            <ion-button color="danger" style="height: 100%;  margin-top: -1px;">
+            <ion-button (click)="removeItem(i)" color="danger" style="height: 100%; margin-top: -1px;">
               <ion-icon name="close-circle"></ion-icon> Delete</ion-button
             >
           </ion-item-options>
         </ion-card>
-      </ion-item-sliding>
+         </ion-item-sliding>
+         </ion-list>
     </div>
   </div>
 </ion-content>
